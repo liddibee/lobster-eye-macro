@@ -37,12 +37,13 @@ function processImage(imageFile)
     // We do this instead of using the imageFile parameter so that the
     // directory path is not included on the table
     filename = getTitle();
-    minferetiner="150-Infinity";   
+    minferetiner="50-Infinity";
+    solidityiner="0.85-1.00";   
     roiManager("reset");
     run("Set Measurements...", "area feret's display redirect=None decimal=3");
     run("8-bit");
 	run("Auto Local Threshold", "method=Phansalkar radius=600 parameter_1=0 parameter_2=0");
-	run("Extended Particle Analyzer", "min_feret="+ minferetiner + " show=Outlines redirect=None keep=None display add exclude include");
+	run("Extended Particle Analyzer", "solidity=" + solidityiner + " min_feret="+ minferetiner + " show=Outlines redirect=None keep=None display add exclude include");
     
     if (roiManager("Count") > 0){
     roiManager("Select", 0);
