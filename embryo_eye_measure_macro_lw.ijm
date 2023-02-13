@@ -37,7 +37,8 @@ function processImage(imageFile)
     // We do this instead of using the imageFile parameter so that the
     // directory path is not included on the table
     filename = getTitle();
-    minferetiner="50-Infinity";
+    // changing the following two values will impact area that macro selects
+    minferetiner="50-Infinity"; 
     solidityiner="0.85-1.00";   
     roiManager("reset");
     run("Set Measurements...", "area feret's display redirect=None decimal=3");
